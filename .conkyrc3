@@ -1,0 +1,123 @@
+# set to yes if you want Conky to be forked in the background
+    background yes
+    use_xft yes
+    xftfont HandleGotD:size=10
+#    xftont WenQuanYi Micro Hei Mono:bold:size=9
+    xftalpha 0.8
+    text_buffer_size 10000
+
+    update_interval 4.0
+
+    total_run_times 0
+
+    own_window yes
+    own_window_type conky
+    own_window_transparent yes
+    own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+    double_buffer yes
+
+    minimum_size 1675 1800
+    maximum_width 1675
+    draw_shades no
+    draw_outline no
+    draw_borders no
+    draw_graph_borders yes
+   
+    default_color black
+    default_shade_color red
+    default_outline_color grey
+    own_window_colour grey
+    alignment top_left
+
+    gap_x 0
+    gap_y 22
+
+    no_buffers yes
+    uppercase no
+
+    cpu_avg_samples 2
+
+    override_utf8_locale yes
+
+TEXT
+${offset 1450}${font sans-serif:bold:size=11}DATE & TIME ${font}${hr 2}
+${offset 1450}${alignc}${font Arial Black:bold:size=36}${time %H:%M}${font}
+${offset 1450}${alignc -10}${font WenQuanYi Micro Hei Mono:size=10}${time %A %d %B %Y}${font}
+
+${offset 1450}${font sans-serif:bold:size=11}SYSTEM ${font}${hr 2}
+${offset 1450}$sysname $kernel on $machine
+${offset 1450}Core i7 @ ${freq}MHz
+${offset 1450}Hostname $alignr $nodename
+${offset 1450}Uptime $alignr $uptime
+${offset 1450}Cpu $alignr ${cpu cpu0}%
+${offset 1450}${cpubar cpu0}
+${offset 1450}Mem $alignc $mem / $memmax $alignr $memperc% 
+${offset 1450}$membar
+${offset 1450}Swap $alignc $swap / $swapmax $alignr $swapperc% 
+${offset 1450}${swapbar}
+${offset 1450}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}% 
+${offset 1450}${fs_bar /}
+
+${offset 1450}${font sans-serif:bold:size=11}PROCESSES ${font}${hr 2}
+${offset 1450}$processes processes ($running_processes running)
+${offset 20}${font WenQuanYi Micro Hei Mono:size=12}KEY-BINDING ----------------------
+${offset 20}${font WenQuanYi Micro Hei Mono:size=10}W-t                Terminal 
+${offset 20}W-f                FileManager
+${offset 20}W-w                Web(Firefox)
+${offset 20}W-c                Chromium
+${offset 20}W-m                Menu
+${offset 20}C-A-Left           DesktopPrev
+${offset 20}C-A-Right          DesktopNext
+${offset 20}S-C-A-Left         SendToDesktopPrev
+${offset 20}S-C-A-Right        SendToDesktopNest
+${offset 20}W-Right            MaximizeHorz
+${offset 20}W-Up               MaximizeVert
+${offset 20}W-Left             UnmaximizeHorz
+${offset 20}W-Right            UnmaximizeVert${font}
+
+${offset 20}${font WenQuanYi Micro Hei Mono:size=12}CONNECTIONS ----------------------${font}
+${offset 20}Inbound: ${tcp_portmon 1 32767 count}     Outbound: ${tcp_portmon 32768 61000 count}       ALL: ${tcp_portmon 1 65535 count}   
+${offset 20}Inbound Connection        Local Service Port
+${offset 20}${tcp_portmon 1 32767 rip 0}  ${tcp_portmon 1 32767 rhost 0}     ${tcp_portmon 1 32767 lservice 0} ${tcp_portmon 1 32767 lport 0}
+${offset 20}${tcp_portmon 1 32767 rip 1}  ${tcp_portmon 1 32767 rhost 1}     ${tcp_portmon 1 32767 lservice 1} ${tcp_portmon 1 32767 lport 1}
+${offset 20}${tcp_portmon 1 32767 rip 2}  ${tcp_portmon 1 32767 rhost 2}     ${tcp_portmon 1 32767 lservice 2} ${tcp_portmon 1 32767 lport 2}
+${offset 20}${tcp_portmon 1 32767 rip 3}  ${tcp_portmon 1 32767 rhost 3}     ${tcp_portmon 1 32767 lservice 3} ${tcp_portmon 1 32767 lport 3}
+${offset 20}${tcp_portmon 1 32767 rip 4}  ${tcp_portmon 1 32767 rhost 4}     ${tcp_portmon 1 32767 lservice 4} ${tcp_portmon 1 32767 lport 4}
+
+${offset 20}Outbound Connection     Remote Service Port
+${offset 20}${tcp_portmon 32768 61000 rip 0}  ${tcp_portmon 32768 61000 rhost 0}     ${tcp_portmon 32768 61000 rservice 0} ${tcp_portmon 32768 61000 rport 0}
+${offset 20}${tcp_portmon 32768 61000 rip 1}  ${tcp_portmon 32768 61000 rhost 1}     ${tcp_portmon 32768 61000 rservice 1} ${tcp_portmon 32768 61000 rport 1}
+${offset 20}${tcp_portmon 32768 61000 rip 2}  ${tcp_portmon 32768 61000 rhost 2}     ${tcp_portmon 32768 61000 rservice 2} ${tcp_portmon 32768 61000 rport 2}
+${offset 20}${tcp_portmon 32768 61000 rip 3}  ${tcp_portmon 32768 61000 rhost 3}     ${tcp_portmon 32768 61000 rservice 3} ${tcp_portmon 32768 61000 rport 3}
+${offset 20}${tcp_portmon 32768 61000 rip 4}  ${tcp_portmon 32768 61000 rhost 4}     ${tcp_portmon 32768 61000 rservice 4} ${tcp_portmon 32768 61000 rport 4}
+${offset 20}${tcp_portmon 32768 61000 rip 5}  ${tcp_portmon 32768 61000 rhost 5}     ${tcp_portmon 32768 61000 rservice 5} ${tcp_portmon 32768 61000 rport 5}
+${offset 20}${tcp_portmon 32768 61000 rip 6}  ${tcp_portmon 32768 61000 rhost 6}     ${tcp_portmon 32768 61000 rservice 6} ${tcp_portmon 32768 61000 rport 6}
+${offset 20}${tcp_portmon 32768 61000 rip 7}  ${tcp_portmon 32768 61000 rhost 7}     ${tcp_portmon 32768 61000 rservice 7} ${tcp_portmon 32768 61000 rport 7}
+${offset 20}${tcp_portmon 32768 61000 rip 8}  ${tcp_portmon 32768 61000 rhost 8}     ${tcp_portmon 32768 61000 rservice 8} ${tcp_portmon 32768 61000 rport 8}
+${offset 20}${tcp_portmon 32768 61000 rip 9}  ${tcp_portmon 32768 61000 rhost 9}     ${tcp_portmon 32768 61000 rservice 9} ${tcp_portmon 32768 61000 rport 9}
+
+${voffset -600}
+${offset 1450}${cpugraph cpu0}
+${offset 1450}NAME $alignr PID    CPU  MEM
+${offset 1450}${top name 1} ${alignr} ${top pid 1} ${top cpu 1} ${top mem 1}
+${offset 1450}${top name 2} ${alignr} ${top pid 2} ${top cpu 2} ${top mem 2}
+${offset 1450}${top name 3} ${alignr} ${top pid 3} ${top cpu 3} ${top mem 3}
+${offset 1450}${top name 4} ${alignr} ${top pid 4} ${top cpu 4} ${top mem 4}
+${offset 1450}${top name 5} ${alignr} ${top pid 5} ${top cpu 5} ${top mem 5}
+${offset 1450}${top name 6} ${alignr} ${top pid 6} ${top cpu 6} ${top mem 6}
+${offset 1450}${top name 7} ${alignr} ${top pid 7} ${top cpu 7} ${top mem 7}
+${offset 1450}${top name 8} ${alignr} ${top pid 8} ${top cpu 8} ${top mem 8}
+${offset 1450}${top name 9} ${alignr} ${top pid 9} ${top cpu 9} ${top mem 9}
+${offset 1450}${top name 10} ${alignr} ${top pid 10} ${top cpu 10} ${top mem 10}
+
+
+${offset 1450}${font sans-serif:bold:size=11}NETWORK ${font}${hr 2}
+${offset 1450}enp0s18 $alignr ${addr enp0s18}
+${offset 1450}Inbound $alignr ${downspeed enp0s18} kb/s
+${offset 1450}${voffset -5}${downspeedgraph enp0s18}
+${offset 1450}Outbound $alignr ${upspeed enp0s18} kb/s
+${offset 1450}${voffset -5}${upspeedgraph enp0s18}
+${offset 1450}Upload: ${alignr}${totalup enp0s18}
+${offset 1450}Download: ${alignr}${totaldown enp0s18}
+

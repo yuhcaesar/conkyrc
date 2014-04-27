@@ -1,0 +1,10 @@
+URxvt.transparent:true
+URxvt.scrollBar:false
+URxvt.borderLess:true
+URxvt.cursorColor:grey
+URxvt.foreground:#161F49
+URxvt.font:xft:DejaVu Sans Mono:size=10
+#URxvt.font: xft:WenQuanYi Micro Hei Mono:size=10,xft:Inconsolata\ for\ Powerline:size=12
+URxvt*geometry:170x24
+URxvt*borderLess:true
+#urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12      

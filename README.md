@@ -1,0 +1,4 @@
+conkyrc
+=======
+
+my conky config
